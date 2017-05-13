@@ -73,4 +73,16 @@ public class Pair {
     public void setWeekdayIndex(int weekdayIndex) {
         this.weekdayIndex = weekdayIndex;
     }
+
+    @Override
+    public String toString() {
+        return "Pair{" +
+                "id=" + id +
+                ", pairName='" + pairName + '\'' +
+                ", teacherName='" + teacherName + '\'' +
+                ", studentCourse=" + studentCourse +
+                ", studentGroup=" + studentGroup +
+                ", weekdayIndex=" + weekdayIndex +
+                '}';
+    }
 }

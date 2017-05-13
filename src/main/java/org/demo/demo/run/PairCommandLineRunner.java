@@ -10,11 +10,11 @@ import org.springframework.stereotype.Component;
 public class PairCommandLineRunner implements CommandLineRunner {
     @Override
     public void run(String... strings) throws Exception {
-       // for(Pair pair: this.pairRepository.findAll()){
-       //     System.out.println(pair.toString());
-      //  }
+      for(Pair pair: this.pairRepository.findAll()){
+           System.out.println(pair.toString());
+       }
     }
 
-    //@Autowired
-   // PairRepository pairRepository;
+    @Autowired
+    PairRepository pairRepository;
 }
