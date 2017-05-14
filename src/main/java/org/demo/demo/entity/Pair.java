@@ -19,26 +19,21 @@ public class Pair {
 
     private int classroom;
 
-    @JsonIgnore
-    private int studentCourse;
-
-    @JsonIgnore
-    private int studentGroup;
-
     private int day;
+
+    private boolean isLecture;
 
 
     public Pair() {
     }
 
-    public Pair(String name, String teacher, int number, int classroom, int studentCourse, int studentGroup, int day) {
+    public Pair(String name, String teacher, int number, int classroom, int day, boolean isLecture) {
         this.name = name;
         this.teacher = teacher;
         this.number = number;
         this.classroom = classroom;
-        this.studentCourse = studentCourse;
-        this.studentGroup = studentGroup;
         this.day = day;
+        this.isLecture = isLecture;
     }
 
     public Long getId() {
@@ -81,28 +76,20 @@ public class Pair {
         this.classroom = classroom;
     }
 
-    public int getStudentCourse() {
-        return studentCourse;
-    }
-
-    public void setStudentCourse(int studentCourse) {
-        this.studentCourse = studentCourse;
-    }
-
-    public int getStudentGroup() {
-        return studentGroup;
-    }
-
-    public void setStudentGroup(int studentGroup) {
-        this.studentGroup = studentGroup;
-    }
-
     public int getDay() {
         return day;
     }
 
     public void setDay(int day) {
         this.day = day;
+    }
+
+    public boolean isLecture() {
+        return isLecture;
+    }
+
+    public void setLecture(boolean lecture) {
+        isLecture = lecture;
     }
 
     @Override
@@ -113,9 +100,8 @@ public class Pair {
                 ", teacher='" + teacher + '\'' +
                 ", number=" + number +
                 ", classroom=" + classroom +
-                ", studentCourse=" + studentCourse +
-                ", studentGroup=" + studentGroup +
                 ", day=" + day +
+                ", isLecture=" + isLecture +
                 '}';
     }
 }
