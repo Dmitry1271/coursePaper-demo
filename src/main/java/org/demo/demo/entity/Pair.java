@@ -1,29 +1,44 @@
 package org.demo.demo.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import javax.persistence.*;
 
 @Entity
 public class Pair {
     @Id
     @GeneratedValue(strategy= GenerationType.AUTO)
+    @JsonIgnore
     private Long id;
 
-    private String pairName;
-    private String teacherName;
+    private String name;
+
+    private String teacher;
+
+    private int number;
+
+    private int classroom;
+
+    @JsonIgnore
     private int studentCourse;
+
+    @JsonIgnore
     private int studentGroup;
-    private int weekdayIndex;
+
+    private int day;
 
 
     public Pair() {
     }
 
-    public Pair(String pairName, String teacherName, int studentCourse, int studentGroup, int weekdayIndex) {
-        this.pairName = pairName;
-        this.teacherName = teacherName;
+    public Pair(String name, String teacher, int number, int classroom, int studentCourse, int studentGroup, int day) {
+        this.name = name;
+        this.teacher = teacher;
+        this.number = number;
+        this.classroom = classroom;
         this.studentCourse = studentCourse;
         this.studentGroup = studentGroup;
-        this.weekdayIndex = weekdayIndex;
+        this.day = day;
     }
 
     public Long getId() {
@@ -34,20 +49,36 @@ public class Pair {
         this.id = id;
     }
 
-    public String getPairName() {
-        return pairName;
+    public String getName() {
+        return name;
     }
 
-    public void setPairName(String pairName) {
-        this.pairName = pairName;
+    public void setName(String name) {
+        this.name = name;
     }
 
-    public String getTeacherName() {
-        return teacherName;
+    public String getTeacher() {
+        return teacher;
     }
 
-    public void setTeacherName(String teacherName) {
-        this.teacherName = teacherName;
+    public void setTeacher(String teacher) {
+        this.teacher = teacher;
+    }
+
+    public int getNumber() {
+        return number;
+    }
+
+    public void setNumber(int number) {
+        this.number = number;
+    }
+
+    public int getClassroom() {
+        return classroom;
+    }
+
+    public void setClassroom(int classroom) {
+        this.classroom = classroom;
     }
 
     public int getStudentCourse() {
@@ -66,23 +97,25 @@ public class Pair {
         this.studentGroup = studentGroup;
     }
 
-    public int getWeekdayIndex() {
-        return weekdayIndex;
+    public int getDay() {
+        return day;
     }
 
-    public void setWeekdayIndex(int weekdayIndex) {
-        this.weekdayIndex = weekdayIndex;
+    public void setDay(int day) {
+        this.day = day;
     }
 
     @Override
     public String toString() {
         return "Pair{" +
                 "id=" + id +
-                ", pairName='" + pairName + '\'' +
-                ", teacherName='" + teacherName + '\'' +
+                ", name='" + name + '\'' +
+                ", teacher='" + teacher + '\'' +
+                ", number=" + number +
+                ", classroom=" + classroom +
                 ", studentCourse=" + studentCourse +
                 ", studentGroup=" + studentGroup +
-                ", weekdayIndex=" + weekdayIndex +
+                ", day=" + day +
                 '}';
     }
 }

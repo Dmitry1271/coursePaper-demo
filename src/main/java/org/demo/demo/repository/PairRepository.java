@@ -7,5 +7,5 @@ import org.springframework.data.repository.CrudRepository;
 import java.util.Collection;
 
 public interface PairRepository extends JpaRepository<Pair, Long> {
-    Collection<Pair> findPairsByStudentCourseAndStudentGroupAndWeekdayIndex(int sudentCourse, int studentGroup, int weekdayIndex);
+    Collection<Pair> findPairsByStudentCourseAndStudentGroupAndDay(int sudentCourse, int studentGroup, int day);
 }

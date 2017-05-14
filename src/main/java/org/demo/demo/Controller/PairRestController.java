@@ -22,8 +22,8 @@ public class PairRestController {
     @RequestMapping(value = "/pairs", method = RequestMethod.GET)
     private Collection<Pair> pairsSuchCourseGroupWeekdayIndex(@RequestParam(value = "course", required = false) int course,
                                                               @RequestParam(value = "group", required = false) int group,
-                                                              @RequestParam(value = "weekday", required = false) int weekday) {
-        return this.pairRepository.findPairsByStudentCourseAndStudentGroupAndWeekdayIndex(course, group, weekday);
+                                                              @RequestParam(value = "day", required = false) int day) {
+        return this.pairRepository.findPairsByStudentCourseAndStudentGroupAndDay(course, group, day);
     }
 
 
