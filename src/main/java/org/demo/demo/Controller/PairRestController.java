@@ -26,5 +26,5 @@ public class PairRestController {
 
 
     @Autowired
-    PairRepository pairRepository;
+    private PairRepository pairRepository;
 }

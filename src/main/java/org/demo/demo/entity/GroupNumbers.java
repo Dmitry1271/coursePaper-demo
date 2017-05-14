@@ -12,9 +12,11 @@ import java.util.Set;
 public class GroupNumbers {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
+    @JsonIgnore
     private Long id;
 
     @ManyToOne(fetch = FetchType.EAGER, cascade = {CascadeType.MERGE, CascadeType.PERSIST})
+    @JoinColumn(name = "course_numbers_id", nullable = false)
     private CourseNumbers courseNumber;
 
     private int groupIndex;

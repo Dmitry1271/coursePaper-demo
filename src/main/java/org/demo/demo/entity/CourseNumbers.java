@@ -1,6 +1,7 @@
 package org.demo.demo.entity;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonInclude;
 
 import javax.persistence.*;
 import java.util.HashSet;
@@ -11,8 +12,10 @@ import java.util.Set;
  */
 @Entity
 public class CourseNumbers {
+
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
+    @JsonIgnore
     private Long id;
 
     @JsonIgnore
