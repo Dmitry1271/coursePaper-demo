@@ -5,6 +5,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 
 import javax.persistence.*;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 /**
@@ -18,25 +19,16 @@ public class CourseNumbers {
     @JsonIgnore
     private Long id;
 
-    @JsonIgnore
-    @OneToMany(fetch = FetchType.EAGER, mappedBy = "courseNumber")
-    private Set<GroupNumbers> groupNumbersSet = new HashSet<>();
-
     private int courseIndex;
+
+    private String groupNumbers;
 
     public CourseNumbers() {
     }
 
-    public CourseNumbers(int courseIndex) {
+    public CourseNumbers(int courseIndex, String groupNumbers) {
         this.courseIndex = courseIndex;
-    }
-
-    public Set<GroupNumbers> getGroupNumbersSet() {
-        return groupNumbersSet;
-    }
-
-    public void setGroupNumbersSet(Set<GroupNumbers> groupNumbersSet) {
-        this.groupNumbersSet = groupNumbersSet;
+        this.groupNumbers = groupNumbers;
     }
 
     public Long getId() {
@@ -55,12 +47,20 @@ public class CourseNumbers {
         this.courseIndex = courseIndex;
     }
 
+    public String getGroupNumbers() {
+        return groupNumbers;
+    }
+
+    public void setGroupNumbers(String groupNumbers) {
+        this.groupNumbers = groupNumbers;
+    }
+
     @Override
     public String toString() {
-        return "CourseNumbers{" +
-                "groupNumbersSet=" + groupNumbersSet +
-                ", id=" + id +
+        return "\"CourseNumbers\":{" +
+                "id=" + id +
                 ", courseIndex=" + courseIndex +
+                ", groupNmbers=" + groupNumbers +
                 '}';
     }
 }
