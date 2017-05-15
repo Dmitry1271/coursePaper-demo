@@ -9,5 +9,5 @@ import java.util.Collection;
 /**
  * Created by cplus on 14.05.2017.
  */
-public interface GroupNumbersRepository extends JpaRepository<GroupNumbers,Long>{
+public interface GroupNumbersRepository extends JpaRepository<GroupNumbers, Long> {
 }

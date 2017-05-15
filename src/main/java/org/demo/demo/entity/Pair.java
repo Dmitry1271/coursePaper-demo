@@ -7,7 +7,7 @@ import javax.persistence.*;
 @Entity
 public class Pair {
     @Id
-    @GeneratedValue(strategy= GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     @JsonIgnore
     private Long id;
 

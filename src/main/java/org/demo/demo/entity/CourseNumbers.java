@@ -19,7 +19,7 @@ public class CourseNumbers {
     private Long id;
 
     @JsonIgnore
-    @OneToMany(fetch = FetchType.EAGER,mappedBy = "courseNumber")
+    @OneToMany(fetch = FetchType.EAGER, mappedBy = "courseNumber")
     private Set<GroupNumbers> groupNumbersSet = new HashSet<>();
 
     private int courseIndex;

@@ -4,16 +4,15 @@ import org.demo.demo.entity.GroupNumbers;
 import org.demo.demo.repository.GroupNumbersRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.repository.query.Param;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.Collection;
 
 /**
  * Created by cplus on 15.05.2017.
  */
+
+@CrossOrigin(origins = "*")
 @RestController
 public class GroupRestController {
 
