@@ -5,7 +5,6 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 
 import javax.persistence.*;
 import java.util.HashSet;
-import java.util.List;
 import java.util.Set;
 
 /**
@@ -21,14 +20,23 @@ public class CourseNumbers {
 
     private int courseIndex;
 
-    private String groupNumbers;
+    @OneToMany(mappedBy = "courseNumbers", cascade = CascadeType.ALL)
+    private Set<GroupNumbers> groupNumbersSet = new HashSet<>();
+
 
     public CourseNumbers() {
     }
 
-    public CourseNumbers(int courseIndex, String groupNumbers) {
+    public CourseNumbers(int courseIndex) {
         this.courseIndex = courseIndex;
-        this.groupNumbers = groupNumbers;
+    }
+
+    public Set<GroupNumbers> getGroupNumbersSet() {
+        return groupNumbersSet;
+    }
+
+    public void setGroupNumbersSet(Set<GroupNumbers> groupNumbersSet) {
+        this.groupNumbersSet = groupNumbersSet;
     }
 
     public Long getId() {
@@ -47,20 +55,4 @@ public class CourseNumbers {
         this.courseIndex = courseIndex;
     }
 
-    public String getGroupNumbers() {
-        return groupNumbers;
-    }
-
-    public void setGroupNumbers(String groupNumbers) {
-        this.groupNumbers = groupNumbers;
-    }
-
-    @Override
-    public String toString() {
-        return "\"CourseNumbers\":{" +
-                "id=" + id +
-                ", courseIndex=" + courseIndex +
-                ", groupNmbers=" + groupNumbers +
-                '}';
-    }
 }
