@@ -14,7 +14,7 @@ public class Pair {
     @ManyToOne
     @JoinColumn(name = "course_id",nullable = false, insertable=false, updatable=false)
     @JsonIgnore
-    private GroupNumbers courseNumbersForPair;
+    private CourseNumbers courseNumbersForPair;
 
     @ManyToOne
     @JoinColumn(name = "group_id",nullable = false, insertable=false, updatable=false)
@@ -30,6 +30,7 @@ public class Pair {
     @JsonIgnore
     @Column(name = "group_id")
     private int groupId;
+
 
     private String teacher;
 
@@ -47,7 +48,7 @@ public class Pair {
     public Pair() {
     }
 
-    public Pair(GroupNumbers courseNumbersForPair, GroupNumbers groupNumbers, String name, int courseId, int groupId, String teacher, int number, String classroom, int day, boolean lecture, int evenDay) {
+    public Pair(CourseNumbers courseNumbersForPair, GroupNumbers groupNumbers, String name, int courseId, int groupId, String teacher, int number, String classroom, int day, boolean lecture, int evenDay) {
         this.courseNumbersForPair = courseNumbersForPair;
         this.groupNumbers = groupNumbers;
         this.name = name;
@@ -69,11 +70,11 @@ public class Pair {
         this.id = id;
     }
 
-    public GroupNumbers getCourseNumbersForPair() {
+    public CourseNumbers getCourseNumbersForPair() {
         return courseNumbersForPair;
     }
 
-    public void setCourseNumbersForPair(GroupNumbers courseNumbersForPair) {
+    public void setCourseNumbersForPair(CourseNumbers courseNumbersForPair) {
         this.courseNumbersForPair = courseNumbersForPair;
     }
 
