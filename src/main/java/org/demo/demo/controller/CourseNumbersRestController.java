@@ -1,4 +1,4 @@
-package org.demo.demo.Controller;
+package org.demo.demo.controller;
 
 import org.demo.demo.entity.CourseNumbers;
 import org.demo.demo.repository.CourseNumbersRepository;
@@ -15,7 +15,7 @@ import java.util.List;
 @RestController
 public class CourseNumbersRestController {
 
-    @RequestMapping(value = "/get-courses",method = RequestMethod.GET)
+    @RequestMapping(value = "/courses",method = RequestMethod.GET)
     private List<CourseNumbers> getAllCourses(){
         return this.courseNumbersRepository.findAll();
     }

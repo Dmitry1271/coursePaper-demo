@@ -3,6 +3,7 @@ package org.demo.demo.entity;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import javax.persistence.*;
+import java.util.HashSet;
 import java.util.Set;
 
 /**
@@ -15,27 +16,23 @@ public class GroupNumbers {
     @JsonIgnore
     private Long id;
 
+    @JsonIgnore
+    @OneToMany(mappedBy = "groupNumbers", cascade = CascadeType.ALL)
+    private Set<Pair> pairSet = new HashSet<>();
+
     @ManyToOne
     @JoinColumn(name = "course_numbers_id", nullable = false)
-    private CourseNumbers courseNumbers;
+    private CourseNumbers courseNumbersForCourse;
 
     private int groupIndex;
 
     public GroupNumbers() {
     }
 
-    public GroupNumbers(CourseNumbers courseNumber, int groupIndex) {
-        this.courseNumbers = courseNumber;
+    public GroupNumbers(Set<Pair> pairSet, CourseNumbers courseNumbersForCourse, int groupIndex) {
+        this.pairSet = pairSet;
+        this.courseNumbersForCourse = courseNumbersForCourse;
         this.groupIndex = groupIndex;
-    }
-
-    @JsonIgnore
-    public CourseNumbers getCourseNumber() {
-        return courseNumbers;
-    }
-
-    public void setCourseNumber(CourseNumbers courseNumber) {
-        this.courseNumbers = courseNumber;
     }
 
     public Long getId() {
@@ -46,20 +43,28 @@ public class GroupNumbers {
         this.id = id;
     }
 
+    public Set<Pair> getPairSet() {
+        return pairSet;
+    }
+
+    public void setPairSet(Set<Pair> pairSet) {
+        this.pairSet = pairSet;
+    }
+
+    @JsonIgnore
+    public CourseNumbers getCourseNumbersForCourse() {
+        return courseNumbersForCourse;
+    }
+
+    public void setCourseNumbersForCourse(CourseNumbers courseNumbersForCourse) {
+        this.courseNumbersForCourse = courseNumbersForCourse;
+    }
+
     public int getGroupIndex() {
         return groupIndex;
     }
 
     public void setGroupIndex(int groupIndex) {
         this.groupIndex = groupIndex;
-    }
-
-    @Override
-    public String toString() {
-        return "GroupNumbers{" +
-                "id=" + id +
-                ", courseNumbers=" + courseNumbers +
-                ", groupIndex=" + groupIndex +
-                '}';
     }
 }

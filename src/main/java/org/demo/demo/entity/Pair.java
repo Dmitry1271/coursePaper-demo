@@ -11,29 +11,54 @@ public class Pair {
     @JsonIgnore
     private Long id;
 
+    @ManyToOne
+    @JoinColumn(name = "course_id",nullable = false, insertable=false, updatable=false)
+    @JsonIgnore
+    private GroupNumbers courseNumbersForPair;
+
+    @ManyToOne
+    @JoinColumn(name = "group_id",nullable = false, insertable=false, updatable=false)
+    @JsonIgnore
+    private GroupNumbers groupNumbers;
+
     private String name;
+
+    @JsonIgnore
+    @Column(name = "course_id")
+    private int courseId;
+
+    @JsonIgnore
+    @Column(name = "group_id")
+    private int groupId;
 
     private String teacher;
 
     private int number;
 
-    private int classroom;
+    private String classroom;
 
     private int day;
 
-    private boolean isLecture;
+    private boolean lecture;
 
+    @JsonIgnore
+    private int evenDay;
 
     public Pair() {
     }
 
-    public Pair(String name, String teacher, int number, int classroom, int day, boolean isLecture) {
+    public Pair(GroupNumbers courseNumbersForPair, GroupNumbers groupNumbers, String name, int courseId, int groupId, String teacher, int number, String classroom, int day, boolean lecture, int evenDay) {
+        this.courseNumbersForPair = courseNumbersForPair;
+        this.groupNumbers = groupNumbers;
         this.name = name;
+        this.courseId = courseId;
+        this.groupId = groupId;
         this.teacher = teacher;
         this.number = number;
         this.classroom = classroom;
         this.day = day;
-        this.isLecture = isLecture;
+        this.lecture = lecture;
+        this.evenDay = evenDay;
     }
 
     public Long getId() {
@@ -44,12 +69,44 @@ public class Pair {
         this.id = id;
     }
 
+    public GroupNumbers getCourseNumbersForPair() {
+        return courseNumbersForPair;
+    }
+
+    public void setCourseNumbersForPair(GroupNumbers courseNumbersForPair) {
+        this.courseNumbersForPair = courseNumbersForPair;
+    }
+
+    public GroupNumbers getGroupNumbers() {
+        return groupNumbers;
+    }
+
+    public void setGroupNumbers(GroupNumbers groupNumbers) {
+        this.groupNumbers = groupNumbers;
+    }
+
     public String getName() {
         return name;
     }
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public int getCourseId() {
+        return courseId;
+    }
+
+    public void setCourseId(int courseId) {
+        this.courseId = courseId;
+    }
+
+    public int getGroupId() {
+        return groupId;
+    }
+
+    public void setGroupId(int groupId) {
+        this.groupId = groupId;
     }
 
     public String getTeacher() {
@@ -68,11 +125,11 @@ public class Pair {
         this.number = number;
     }
 
-    public int getClassroom() {
+    public String getClassroom() {
         return classroom;
     }
 
-    public void setClassroom(int classroom) {
+    public void setClassroom(String classroom) {
         this.classroom = classroom;
     }
 
@@ -85,23 +142,18 @@ public class Pair {
     }
 
     public boolean isLecture() {
-        return isLecture;
+        return lecture;
     }
 
     public void setLecture(boolean lecture) {
-        isLecture = lecture;
+        this.lecture = lecture;
     }
 
-    @Override
-    public String toString() {
-        return "Pair{" +
-                "id=" + id +
-                ", name='" + name + '\'' +
-                ", teacher='" + teacher + '\'' +
-                ", number=" + number +
-                ", classroom=" + classroom +
-                ", day=" + day +
-                ", isLecture=" + isLecture +
-                '}';
+    public int getEvenDay() {
+        return evenDay;
+    }
+
+    public void setEvenDay(int evenDay) {
+        this.evenDay = evenDay;
     }
 }

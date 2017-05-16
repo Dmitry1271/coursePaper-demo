@@ -18,9 +18,13 @@ public class CourseNumbers {
     @JsonIgnore
     private Long id;
 
+    @JsonIgnore
+    @OneToMany(mappedBy = "courseNumbersForPair", cascade = CascadeType.ALL)
+    private Set<Pair> pairSet = new HashSet<>();
+
     private int courseIndex;
 
-    @OneToMany(mappedBy = "courseNumbers", cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "courseNumbersForCourse", cascade = CascadeType.ALL)
     private Set<GroupNumbers> groupNumbersSet = new HashSet<>();
 
 
