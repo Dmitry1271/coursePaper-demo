@@ -13,7 +13,6 @@ import java.util.Set;
 public class GroupNumbers {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    @JsonIgnore
     private Long id;
 
     @JsonIgnore
