@@ -31,10 +31,12 @@ public class Pair {
     @Column(name = "group_id")
     private int groupId;
 
+    @Column(nullable = true)
     private String teacher;
 
     private int number;
 
+    @Column(nullable = true)
     private String classroom;
 
     private int day;
