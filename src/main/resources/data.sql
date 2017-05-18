@@ -3,6 +3,7 @@ INSERT INTO course_numbers(course_index)VALUES (2);
 INSERT INTO group_numbers(course_numbers_id,group_index)VALUES (1,2);
 INSERT INTO group_numbers(course_numbers_id,group_index)VALUES (1,9);
 
+
 INSERT INTO pair(course_id,group_id,name,teacher,number,classroom,day,lecture,even_day)VALUES (1,1,'Численные методы','Игнатенко М.В.',1,'404',1,false,0);
 INSERT INTO pair(course_id,group_id,name,teacher,number,classroom,day,lecture,even_day)VALUES (1,1,'Численные методы','Игнатенко М.В.',2,'419',1,true,1);
 INSERT INTO pair(course_id,group_id,name,teacher,number,classroom,day,lecture,even_day)VALUES (1,1,'Численные методы','Игнатенко М.В.',2,'419',1,true,2);
@@ -48,7 +49,7 @@ INSERT INTO pair(course_id,group_id,name,teacher,number,classroom,day,lecture,ev
 INSERT INTO pair(course_id,group_id,name,teacher,number,classroom,day,lecture,even_day)VALUES (1,2,'Выч. практика','Вельченко С.А.',5,'411-2',4,false,2);
 
 INSERT INTO pair(course_id,group_id,name,teacher,number,classroom,day,lecture,even_day)VALUES (1,2,'Выч. Геом. и комп. графика','Вылегжанин Д.В.',1,'606',5,true,0);
-INSERT INTO pair(course_id,group_id,name,teacher,number,classroom,day,lecture,even_day)VALUES (1,2,'Дифф. уравненеия','Руденок А.Е.',2,'355',5,'false',0);
+INSERT INTO pair(course_id,group_id,name,teacher,number,classroom,day,lecture,even_day)VALUES (1,2,'Дифф. уравненеия','Руденок А.Е.',2,'355',5,false,0);
 INSERT INTO pair(course_id,group_id,name,teacher,number,classroom,day,lecture,even_day)VALUES (1,2,'Дискретная математика','Кузьмин К.Г.',3,'412б',5,false,0);
 INSERT INTO pair(course_id,group_id,name,teacher,number,classroom,day,lecture,even_day)VALUES (1,2,'Англ. яз.','Куцевай О.Б.,Зенченко В.А.',4,'352,232',5,false,2);
 
@@ -57,5 +58,3 @@ INSERT INTO pair(course_id,group_id,name,teacher,number,classroom,day,lecture,ev
 INSERT INTO pair(course_id,group_id,name,teacher,number,classroom,day,lecture,even_day)VALUES (1,2,'Англ. яз.','Куцевай О.Б.,Зенченко В.А.',3,'342,352',6,false,1);
 INSERT INTO pair(course_id,group_id,name,teacher,number,classroom,day,lecture,even_day)VALUES (1,2,'Интернет маркетинг','Кремень Е.В.',4,'419',6,true,1);
 INSERT INTO pair(course_id,group_id,name,teacher,number,classroom,day,lecture,even_day)VALUES (1,2,'Интернет маркетинг','Кремень Е.В.',4,'120',6,false,2);
-
-
